@@ -15,4 +15,4 @@ The Online Café Ordering System is a user-friendly application designed for Har
 WEB PROGRAMMING- HTML
                - CSS
                - JS
-📧 Contact If you have any questions, feel free to reach out! ✉️ Email: alemsegedmuleta1@gmail.com 🔗 GitHub: 
+📧 Contact If you have any questions, feel free to reach out! ✉️ Email: alemsegedmuleta1@gmail.com 🔗 GitHub: https://github.com/alexoliyad
