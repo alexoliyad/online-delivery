@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment - KT Café</title>
+</head>
+<body style="background-color: rgb(91, 243, 213); padding: 20px; text-align: center;">
+    <h1>KT Café Payment</h1>
+    
+    <h2>Your Order Summary</h2>
+    <div id="order-summary"></div>
+
+    <h3>Total: <span id="total-amount"></span> ETB</h3>
+    <p><strong>Delivery Time:</strong> <span id="delivery-time-display"></span></p>
+
+    <h2>Select Payment Method</h2>
+    <ul>
+        <h3 style="text-align: center;">Alemseged Muleta</h3>
+        <li><strong>CBE:</strong> 1000347590227</li>
+        <li><strong>Telebirr:</strong> 0930313021</li>
+        <li><strong>Abyssinia:</strong> 129552891</li>
+    </ul>
+
+    <button onclick="confirmPayment()">Confirm Payment</button>
+
+    <script>
+        const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+        const totalPrice = localStorage.getItem("totalPrice") || 0;
+        const deliveryTime = localStorage.getItem("deliveryTime") || "";
+
+        const orderDiv = document.getElementById("order-summary");
+        cartItems.forEach(item => {
+            orderDiv.innerHTML += `<p>${item.name} x ${item.qty} = ${item.subtotal} ETB</p>`;
+        });
+        document.getElementById("total-amount").innerText = totalPrice;
+        document.getElementById("delivery-time-display").innerText = deliveryTime;
+
+        function confirmPayment() {
+            alert("Payment confirmed! Your order will be delivered at " + deliveryTime);
+            localStorage.clear();
+            window.location.href = "index.html";  // Redirect to menu/home
+        }
+    </script>
+</body>
+</html>
